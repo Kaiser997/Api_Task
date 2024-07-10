@@ -1,0 +1,4 @@
+from api_task.views.person_api_view import PersonListAPIView 
+from api_task.views.task_api_view import TaskListAPIView
+from api_task.views.task_api_view import TaskUpdateDestroyAPIView
+from api_task.views.person_api_view import PersonUpdateDestroyAPIView

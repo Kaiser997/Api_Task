@@ -1,0 +1,17 @@
+{
+    "name" : "brayan", 
+    "last_name" : "rojas", 
+    "document" : "15135456531",
+    "document_type" : "CC",
+    "email" : "brayan@gmail.com",
+    "phone" : "354343543" 
+}
+{
+  "name": "Crear endpoint",
+  "description": "Debe realizar un endpoint para consultar personas",
+  "task_status": "TODO",
+  "priority": "ALTA",
+  "delivery_date": "25 DE JULIO",
+  "commentary": "Realizar la lectura de la documentacion Django rest framework",
+  "person_id": 1
+}
