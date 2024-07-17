@@ -20,6 +20,16 @@ class PersonaTests(APITestCase):
             phone="33646840619",
         )
 
+        self.task = Task.objects.create(
+            name = "Eliminar endpoint",
+            description = "Eliminar el endpoint de consulta de personas",
+            task_status = "TODO",
+            priority = "BAJA",
+            delivery_date = "5 DE MARZO",
+            commentary = "Realizar la lectura de la documentacion",
+            person_id = self.person.pk
+        )
+
         self.user = User.objects.create_user(
             username="roger",
             email="kaiser@gmail.com",
@@ -73,3 +83,13 @@ class PersonaTests(APITestCase):
         response = self.client.post(url, data, format="json")
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(Task.objects.filter(priority="ALTA").count(), 1)
+
+    def test_update_task(self):
+        url = reverse("taskupdatedestroy", kwargs={"pk": self.task.pk})
+        data = {"task_status": "DONE"}
+
+        response = self.client.patch(url, data, format="json")
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(Task.objects.get().task_status, "DONE")
+
+    
